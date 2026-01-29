@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 import java.util.List;
 
 public record LibroDTO (
-       @JsonAlias("id") int id,
+       @JsonAlias("id") long id,
        @JsonAlias("title") String titulo,
        @JsonAlias("authors") List<PersonaDTO> autores,
        @JsonAlias("languages") List<String > lenguajes,
