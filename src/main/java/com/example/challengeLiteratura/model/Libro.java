@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@ToString
+//@ToString(exclude = "autor")
 @Setter
 
 @Entity
@@ -25,7 +25,7 @@ public class Libro {
      private String lenguajes;
      private int numero_Descargas;
 
-     @ManyToOne
+     @ManyToOne( fetch = FetchType.EAGER)
      private Autor autor;
 
      public Libro (LibroDTO lDTO){

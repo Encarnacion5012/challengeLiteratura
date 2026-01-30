@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@ToString
+@ToString(exclude = "libros")
 
 @Entity
 @Table(name = "autores")
@@ -27,6 +27,7 @@ public class Autor {
      private String nombre;
 
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
      List<Libro> libros;
 
     public Autor(PersonaDTO pDTO){
