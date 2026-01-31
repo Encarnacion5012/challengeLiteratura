@@ -34,9 +34,10 @@ public class Main {
                             2-Listar Libros en API
                             3-Listar autores en Api
                             4-Listar autores vivos en un periodo de tiempo en API
-                            5 -Listar libros buscados (guardados en la db)
-                            6 -Listar autores guadados de los libros busados
-                            7 -Listar autores vivos en un periodo de tiempo (DB Local)
+                            5-Listar libros buscados (guardados en la db)
+                            6-Listar autores guadados de los libros busados
+                            7-Listar autores vivos en un periodo de tiempo (DB Local)
+                            8-Listar Libros por idioma DB
                             0-Salir
                             ----------------------------
                             """);
@@ -50,7 +51,7 @@ public class Main {
                     } else if (opcion ==2) {
                         libroService.listarLibrosEnLaApi();
                     } else if (opcion == 3) {
-                        
+                        autorService.listarAutoresEnAPI();
                     } else if (opcion == 4) {
                         autorService.listarAutoresvivosEnUnPeriodoDeTiempoAPI();
                     } else if (opcion == 5) {
@@ -59,6 +60,8 @@ public class Main {
                         autorService.listarAutoresGuardados();
                     }  else if (opcion == 7) {
                         autorService.listarAutoresvivosEnUnPeriodoDeTiempoDB();
+                    } else if (opcion == 8) {
+                        libroService.lisarLibrosPorIdiomas();
                     } else if (opcion == 0) {
                         System.out.println("La aplicacion finalizo");
                         break;

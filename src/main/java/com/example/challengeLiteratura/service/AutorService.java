@@ -135,6 +135,17 @@ public class AutorService {
     }
 
     public void listarAutoresEnAPI(){
-
+        ListasLibrosDTO listasLibros = consumidor.optenerDatosApi(URLBASE, ListasLibrosDTO.class);
+        listasLibros.libros().forEach(l-> {
+            l.autores().forEach(a-> {
+                System.out.println("""
+                        ----------------------------
+                        nombre: %s
+                        anio_Nacimiento: %d
+                        anio_Muerte: %d
+                        """.formatted(a.nombre(), a.anio_Nacimiento(), a.anio_Muerte()));
+            });
+                }
+        );
     }
 }

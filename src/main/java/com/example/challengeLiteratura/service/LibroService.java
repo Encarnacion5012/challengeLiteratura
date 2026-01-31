@@ -9,7 +9,6 @@ import com.example.challengeLiteratura.repository.LibroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Scanner;
 
 @Service
@@ -100,6 +99,22 @@ public class LibroService {
     public void listarLibrosEnLaApi(){
         ListasLibrosDTO listasLibrosApi = consumidor.optenerDatosApi(URLBASE, ListasLibrosDTO.class);
         System.out.println(listasLibrosApi);
+    }
+
+    public void lisarLibrosPorIdiomas(){
+        System.out.println("Ingrese el Idiomas que desea encontrar, ejem: en");
+        String idioma = teclado.nextLine();
+        libroRepository.findBylenguajes(idioma).forEach(l->{
+            System.out.println("""
+                     -------------------------------
+                            Titulo: %s
+                            Lenguaje: %s
+                            Numero_Descargas: %d
+                            Autor: %s    
+                            -------------------------------
+                    """.formatted(l.getTitulo(), l.getLenguajes(), l.getNumero_Descargas(), l.getAutor().getNombre()));
+                }
+        );
     }
 
 
